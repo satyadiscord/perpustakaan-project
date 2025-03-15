@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply bg-slate-100
+}
+
+.navbar-container-costume {
+  @apply w-full max-w-screen-xl p-3 mx-auto
+}
+
+.container-costume {
+  @apply w-full max-w-screen-xl p-1 mx-auto
+}
