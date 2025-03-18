@@ -9,9 +9,16 @@ use App\Models\PeminjamanBuku;
 use App\Models\PengembalianBuku;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class PeminjamanBukuController extends Controller
 {
+    // route data pinjam buku
+    public function pinjamBuku(): View
+    {
+        return view('content.admin.pinjam-buku');
+    }
+
     public function pinjam($buku_id)
     {
         $buku = Buku::findOrFail($buku_id);

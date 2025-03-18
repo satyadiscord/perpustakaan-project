@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardMemberController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PeminjamanBukuController;
+use App\Http\Controllers\PengembalianBukuContorller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/testing', function () {
@@ -20,6 +24,12 @@ Route::post('/register', [AuthController::class, 'register'])->name('auth.regist
 // route role [member, admin]
 Route::group(['middleware' => 'auth:admin'], function() {
     Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard.index');
+
+    // route
+    Route::get('admin/dashboard/member', [MemberController::class, 'member']);
+    Route::get('admin/dashboard/buku', [BukuController::class, 'buku']);
+    Route::get('admin/dashboard/data-pinjam-buku', [PeminjamanBukuController::class, 'pinjamBuku']);
+    Route::get('admin/dashboard/data-kembalian-buku', [PengembalianBukuContorller::class, 'kembalianBuku']);
 });
 
 Route::group(['middleware' => 'auth:member'], function() {
