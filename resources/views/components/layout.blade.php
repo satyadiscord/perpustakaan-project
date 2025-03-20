@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://unpkg.com/feather-icons"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    @vite('resources/css/app.css')
-    @vite(['resources/js/app.js'])
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Navigation</title>
 </head>

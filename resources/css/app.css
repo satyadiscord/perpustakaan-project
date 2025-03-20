@@ -11,3 +11,40 @@
 .container-costume {
   @apply w-full max-w-screen-xl p-1 mx-auto
 }
+
+@layer utilities {
+  .custom-scroll::-webkit-scrollbar {
+    height: 0px;
+  }
+
+  /* menampilkan scrollbar saat hover atau saat sedang di-scroll */
+  .custom-scroll:hover::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+/* shadow */
+@layer utilities {
+  /* Shadow dengan gambar */
+  .shadow-image {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Hover berubah menjadi warna biru */
+  .shadow-image:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 255, 0.5);
+  }
+}

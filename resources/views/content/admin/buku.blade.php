@@ -1,3 +1,9 @@
 <x-layout>
-  <h1 class="p-3">ini halaman buku</h1>
+  {{-- gallery --}}
+  <x-pages.admin.gallery-slide />
+  <x-pages.admin.input-book />
+  <x-pages.admin.kategori />
+
+  {{-- main buku --}}
+  <x-pages.admin.buku-list />
 </x-layout>
