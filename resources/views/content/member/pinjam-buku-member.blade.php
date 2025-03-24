@@ -1,5 +1,5 @@
 <x-layout>
-  <h1 class="mt-12 mb-3 font-roboto font-medium text-2xl flex gap-1">Data <span class="hidden sm:block">Member</span> Peminjaman Buku</h1>
+    <h1 class="mt-12 mb-3 font-roboto font-medium text-2xl">Peminjaman Buku, {{ Auth::user()->name }}</h1>
     <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -19,42 +19,26 @@
                     <th scope="col" class="px-6 py-3">
                         Judul Buku Dipinjam
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        Nama Member
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Action
-                    </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($pinjam as $p)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $loop->iteration }}
+                        1
                     </th>
                     <td class="px-6 py-4">
-                        {{ date('d-m-Y H:i', strtotime($p->tgl_peminjaman)) }}
+                        2025-09-12 10:00
                     </td>
                     <td class="px-6 py-4">
-                        {{ date('d-m-Y', strtotime($p->tgl_pengembalian)) }}
+                        2025-09-15
                     </td>
-                    <td class="px-6 py-4 capitalize {{ $p->status === 'pinjam' ? 'text-green-500' : 'text-red-500' }}">
-                        {{ $p->status }}
+                    <td class="px-6 py-4 capitalize">
+                        Pinjam/Kembali
                     </td>
                     <td class="px-6 py-4 hover:underline cursor-pointer">
-                        <a href="#">{{ $p->buku->judul }}</a>
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ $p->user->name }}
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#">
-                            <i data-feather="trash-2" class="size-5"></i>
-                        </a>
+                        Makanan Indonesia terbaik 2025
                     </td>
                 </tr>
-                @endforeach
             </tbody>
         </table>
     </div>

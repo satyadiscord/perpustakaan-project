@@ -42,6 +42,7 @@
                 x-transition:leave-start="-translate-x-96 opacity-100"
                 x-transition:leave-end="-translate-x-96 opacity-0"
                 class="absolute top-full left-0 bg-white min-h-screen w-64 sm:w-72 z-40 border-r border-t shadow-lg p-3 space-y-10 dark:bg-darkMode">
+                @if (Auth::user()->role == 'admin')
                 <x-menu-list href="/admin/dashboard" icon="grid" :active="request()->is('admin/dashboard')">Dashboard</x-menu-list>
                 <x-menu-list href="/admin/dashboard/member" icon="users" :active="request()->is('admin/dashboard/member')">Member</x-menu-list>
                 <x-menu-list href="/admin/dashboard/buku" icon="book" :active="request()->is('admin/dashboard/buku')">Buku</x-menu-list>
@@ -49,6 +50,14 @@
                     Buku</x-menu-list>
                 <x-menu-list href="/admin/dashboard/data-kembalian-buku" icon="archive" :active="request()->is('admin/dashboard/data-kembalian-buku')">Data Kembalian
                     Buku</x-menu-list>
+                @endif
+
+                @if (Auth::user()->role == 'member')
+                <x-menu-list href="/member/dashboard" icon="grid" :active="request()->is('member/dashboard')">Dashboard</x-menu-list>
+                <x-menu-list href="/member/dashboard/buku" icon="book" :active="request()->is('member/dashboard/buku')">Buku</x-menu-list>
+                <x-menu-list href="/member/dashboard/peminjaman-buku" icon="book-open" :active="request()->is('member/dashboard/peminjaman-buku')">Peminjaman Buku</x-menu-list>
+                <x-menu-list href="/member/dashboard/pengembalian-buku" icon="archive" :active="request()->is('member/dashboard/pengembalian-buku')">Pengembalian Buku</x-menu-list>
+                @endif
             </ul>
         </nav>
     </div>

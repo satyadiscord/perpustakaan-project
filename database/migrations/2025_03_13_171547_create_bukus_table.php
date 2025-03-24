@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('penerbit');
             $table->year('tahun_terbit');
             $table->text('cover_buku')->nullable();
+            $table->text('deskripsi');
             $table->integer('stok_buku')->default(20);
             $table->foreignId('kategori_id')->constrained(table: 'kategoris', indexName: 'buku_kategori_id');
             $table->timestamps();

@@ -1,23 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Buku;
-use Illuminate\Http\Request;
 use App\Models\PeminjamanBuku;
 use App\Models\PengembalianBuku;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class PeminjamanBukuController extends Controller
 {
     // route data pinjam buku
     public function pinjamBuku(): View
     {
-        return view('content.admin.pinjam-buku');
+        $pinjam = PeminjamanBuku::with(['buku', 'user'])->get();
+
+        return view('content.admin.pinjam-buku', compact('pinjam'));
     }
+
+    // get all data pinjam
 
     public function pinjam($buku_id)
     {
