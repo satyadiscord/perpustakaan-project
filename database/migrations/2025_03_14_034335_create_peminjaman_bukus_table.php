@@ -16,7 +16,7 @@ return new class extends Migration
             $table->dateTime('tgl_peminjaman');
             $table->dateTime('tgl_pengembalian');
             $table->enum('status', ['pinjam', 'kembali']);
-            $table->foreignId('buku_id')->constrained(table: 'bukus', indexName: 'fk_buku_id');
+            $table->foreignId('buku_id')->constrained(table: 'bukus', indexName: 'fk_buku_id')->onDelete('cascade');
             $table->foreignId('user_id')->constrained(table: 'users', indexName: 'fk_user_id');
             $table->timestamps();
         });

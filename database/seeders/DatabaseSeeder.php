@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             KategoriSeeder::class,
-            BukuSeeder::class,
+            // BukuSeeder::class,
         ]);
 
         // User::factory()->create([

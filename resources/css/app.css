@@ -39,13 +39,15 @@
 
 /* shadow */
 @layer utilities {
-  /* Shadow dengan gambar */
   .shadow-image {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   }
 
-  /* Hover berubah menjadi warna biru */
   .shadow-image:hover {
-    box-shadow: 1px 1px 10px rgba(0, 0, 255, 0.5);
+    box-shadow: 1px 1px 10px yellow;
+  }
+
+  .dark .shadow-image:hover {
+    box-shadow: 1px 1px 15px yellow;
   }
 }

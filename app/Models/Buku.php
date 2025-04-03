@@ -11,20 +11,20 @@ class Buku extends Model
     /** @use HasFactory<\Database\Factories\BukuFactory> */
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'judul',
         'isbn',
         'penulis',
         'penerbit',
         'tahun_terbit',
-        'cover_buku',
-        'stok_buku',
         'deskripsi',
+        'stok_buku',
+        'cover_buku',
         'kategori_id',
     ];
 
     public function kategori(): BelongsTo // many to one: banyak buku terdapat 1 kategori saja.
     {
         return $this->belongsTo(Kategori::class, 'kategori_id');
-    } 
+    }
 }

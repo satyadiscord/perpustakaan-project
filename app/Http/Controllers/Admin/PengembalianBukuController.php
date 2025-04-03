@@ -11,7 +11,7 @@ class PengembalianBukuController extends Controller
 {
     public function kembalianBuku(): View
     {
-        $kembali = PengembalianBuku::with(['peminjaman'])->get();
+        $kembali = PengembalianBuku::with(['peminjaman'])->paginate(8);
 
         return view('content.admin.kembalian-buku', compact('kembali'));
     }

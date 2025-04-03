@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Navigation</title>
@@ -45,7 +46,7 @@
                 @if (Auth::user()->role == 'admin')
                 <x-menu-list href="/admin/dashboard" icon="grid" :active="request()->is('admin/dashboard')">Dashboard</x-menu-list>
                 <x-menu-list href="/admin/dashboard/member" icon="users" :active="request()->is('admin/dashboard/member')">Member</x-menu-list>
-                <x-menu-list href="/admin/dashboard/buku" icon="book" :active="request()->is('admin/dashboard/buku')">Buku</x-menu-list>
+                <x-menu-list href="/admin/dashboard/buku/Semua" icon="book" :active="request()->is('admin/dashboard/buku/Semua')">Buku</x-menu-list>
                 <x-menu-list href="/admin/dashboard/data-pinjam-buku" icon="book-open" :active="request()->is('admin/dashboard/data-pinjam-buku')">Data Pinjaman
                     Buku</x-menu-list>
                 <x-menu-list href="/admin/dashboard/data-kembalian-buku" icon="archive" :active="request()->is('admin/dashboard/data-kembalian-buku')">Data Kembalian
@@ -54,7 +55,7 @@
 
                 @if (Auth::user()->role == 'member')
                 <x-menu-list href="/member/dashboard" icon="grid" :active="request()->is('member/dashboard')">Dashboard</x-menu-list>
-                <x-menu-list href="/member/dashboard/buku" icon="book" :active="request()->is('member/dashboard/buku')">Buku</x-menu-list>
+                <x-menu-list href="/member/dashboard/buku/Semua" icon="book" :active="request()->is('member/dashboard/buku/Semua')">Buku</x-menu-list>
                 <x-menu-list href="/member/dashboard/peminjaman-buku" icon="book-open" :active="request()->is('member/dashboard/peminjaman-buku')">Peminjaman Buku</x-menu-list>
                 <x-menu-list href="/member/dashboard/pengembalian-buku" icon="archive" :active="request()->is('member/dashboard/pengembalian-buku')">Pengembalian Buku</x-menu-list>
                 @endif

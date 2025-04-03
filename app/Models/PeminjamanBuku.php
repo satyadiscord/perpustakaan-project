@@ -21,7 +21,7 @@ class PeminjamanBuku extends Model
         'buku_id',
         'user_id',
     ];
-
+    
     public function buku(): BelongsTo
     {
         return $this->belongsTo(Buku::class,'buku_id');
